@@ -10,17 +10,23 @@ class Config:
         self.config_file = config_file
         self.retriever = "tavily"
         self.llm_provider = "ChatOpenAI"
-        self.fast_llm_model = "gpt-3.5-turbo-16k"
+        # gpt-3.5-turbo-16k to gpt-4-1106-preview
+        self.fast_llm_model = "gpt-4-1106-preview"
         self.smart_llm_model = "gpt-4-1106-preview"
-        self.fast_token_limit = 2000
-        self.smart_token_limit = 4000
-        self.browse_chunk_max_length = 8192
-        self.summary_token_limit = 700
+        # 2000 to 4000
+        self.fast_token_limit = 4000
+        # 4000 to 8000
+        self.smart_token_limit = 8000
+        # 8192 to 16000
+        self.browse_chunk_max_length = 16000
+        # 700 to 1400
+        self.summary_token_limit = 1400
         self.temperature = 0.6
         self.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
                           " Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
         self.memory_backend = "local"
-        self.total_words = 1000
+        # 1000 to 2000
+        self.total_words = 2000
         self.report_format = "apa"
         self.max_iterations = 1
 
