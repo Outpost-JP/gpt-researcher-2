@@ -62,7 +62,7 @@
                                                 alt="Auto Agent"></div>
     <form method="POST" class="mt-3" onsubmit="GPTResearcher.startResearch(); return false;">
         <div class="form-group">
-            <label for="task" class="agent-question">What would you like me to research next?</label>
+            <label for="task" class="agent-question">どのような内容をリサーチしたいですか？</label>
             <input type="text" id="task" name="task" class="form-control" required>
             <input type="radio" name="agent" id="autoAgent" value="Auto Agent" checked hidden>
         </div>
@@ -74,29 +74,28 @@
             <button type="button" id="btnShowAuto" class="btn btn-secondary mt-3 btn-show">Auto Agent</button>
         </div>
         <div class="form-group">
-            <label for="report_type" class="agent-question">What type of report would you like me to generate?</label>
+            <label for="report_type" class="agent-question">どのようなタイプのレポートを作成したいですか？</label>
             <select name="report_type" class="form-control" required>
-                <option value="research_report">Research Report</option>
-                <option value="resource_report">Resource Report</option>
-                <option value="outline_report">Outline Report</option>
+                <option value="research_report">リサーチレポート</option>
+                <option value="resource_report">リソースレポート</option>
+                <option value="outline_report">アウトラインレポート</option>
             </select>
         </div>
         <input type="submit" value="Research" class="btn btn-primary button-padding">
     </form>
 
     <div class="margin-div">
-        <h2>Agent Output</h2>
-        <p class="mt-2 text-left" style="font-size: 0.8rem;">An agent tailored specifically to your task
-                        will be generated to provide the most precise and relevant research results.</p>
+        <h2>エージェントの出力</h2>
+        <p class="mt-2 text-left" style="font-size: 0.8rem;">あなたのタスクに見合ったエージェントを作成しています。</p>
         <div id="output"></div>
     </div>
     <div class="margin-div">
-        <h2>Research Report</h2>
+        <h2>リサーチレポート</h2>
         <div id="reportContainer"></div>
         <div id="reportActions">
             <div class="alert alert-info" role="alert" id="status"></div>
-            <a id="copyToClipboard" onclick="GPTResearcher.copyToClipboard()" class="btn btn-secondary mt-3" style="margin-right: 10px;">Copy to clipboard</a>
-            <a id="downloadLink" href="#" class="btn btn-secondary mt-3" target="_blank">Download as PDF</a>
+            <a id="copyToClipboard" onclick="GPTResearcher.copyToClipboard()" class="btn btn-secondary mt-3" style="margin-right: 10px;">クリップボードにコピー</a>
+            <a id="downloadLink" href="#" class="btn btn-secondary mt-3" target="_blank">PDFをダウンロード</a>
         </div>
     </div>
 </main>
