@@ -13,7 +13,8 @@ class Config:
         self.fast_llm_model = "gpt-3.5-turbo-16k"
         self.smart_llm_model = "gpt-4-1106-preview"
         self.fast_token_limit = 2000
-        self.smart_token_limit = 4000
+        #4000 to 8000
+        self.smart_token_limit = 8000
         self.browse_chunk_max_length = 8192
         self.summary_token_limit = 700
         self.temperature = 0.6
