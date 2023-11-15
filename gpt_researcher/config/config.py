@@ -11,14 +11,14 @@ class Config:
         self.retriever = "tavily"
         self.llm_provider = "ChatOpenAI"
         # gpt-3.5-turbo-16k to gpt-4-1106-preview
-        self.fast_llm_model = "gpt-4-1106-preview"
+        self.fast_llm_model = " gpt-3.5-turbo-16k"
         self.smart_llm_model = "gpt-4-1106-preview"
         # 2000 to 4000
         self.fast_token_limit = 4000
         # 4000
         self.smart_token_limit = 4000
         # 8192 to 16000
-        self.browse_chunk_max_length = 16000
+        self.browse_chunk_max_length = 8000
         # 700 to 1400
         self.summary_token_limit = 1400
         self.temperature = 0.6
