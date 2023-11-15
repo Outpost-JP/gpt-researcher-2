@@ -8,7 +8,7 @@
             "fast_llm_model": "gpt-4-1106-preview",
             "smart_llm_model": "gpt-4-1106-preview",
             "fast_token_limit": 4000,
-            "smart_token_limit": 8000,
+            "smart_token_limit": 4000,
             "browse_chunk_max_length": 16000,
             "summary_token_limit": 1400,
             "temperature": 0.6,
