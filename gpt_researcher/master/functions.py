@@ -16,9 +16,6 @@ def get_retriever(retriever):
 
     """
     match retriever:
-        case "duckduckgo":
-            from gpt_researcher.retrievers import Duckduckgo
-            retriever = Duckduckgo
         case "tavily":
             from gpt_researcher.retrievers import TavilySearch
             retriever = TavilySearch
@@ -31,6 +28,9 @@ def get_retriever(retriever):
         case "serp":
             from gpt_researcher.retrievers import SerpSearch
             retriever = SerpSearch
+        case "duckduckgo":
+            from gpt_researcher.retrievers import Duckduckgo
+            retriever = Duckduckgo
 
         case _:
             raise Exception("Retriever not found.")
@@ -76,11 +76,12 @@ async def get_sub_queries(query, agent_role_prompt, cfg):
         sub_queries: List of sub queries
 
     """
+    max_research_iterations = cfg.max_iterations if cfg.max_iterations else 1
     response = await create_chat_completion(
         model=cfg.smart_llm_model,
         messages=[
             {"role": "system", "content": f"{agent_role_prompt}"},
-            {"role": "user", "content": generate_search_queries_prompt(query)}],
+            {"role": "user", "content": generate_search_queries_prompt(query, max_iterations=max_research_iterations)}],
         temperature=0,
         llm_provider=cfg.llm_provider
     )

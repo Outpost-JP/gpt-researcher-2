@@ -17,18 +17,17 @@ class Config:
         self.fast_token_limit = 4000
         # 4000
         self.smart_token_limit = 4000
-        # 8192 to 16000
-        self.browse_chunk_max_length = 8000
-        # 700 to 1400
-        self.summary_token_limit = 1400
-        self.temperature = 0.6
+        self.browse_chunk_max_length = 8192
+        self.summary_token_limit = 700
+        self.temperature = 0.55
         self.user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" \
                           " Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+        self.max_search_results_per_query = 5
         self.memory_backend = "local"
         # 1000 to 1500
         self.total_words = 1500
         self.report_format = "apa"
-        self.max_iterations = 1
+        self.max_iterations = 3
 
         self.load_config_file()
 
