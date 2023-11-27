@@ -11,10 +11,8 @@ async def write_to_file(filename: str, text: str) -> None:
 
 async def create_css_file(css_file_path: str) -> None:
     css_text = """
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
     body {
-      font-family: 'Noto Sans', sans-serif;
+      font-family: Arial, 'メイリオ', Meiryo, sans-serif;  /* システムにインストールされているフォントを使用 */
     }
     """
     if not os.path.exists(css_file_path):
