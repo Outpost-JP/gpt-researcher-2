@@ -12,7 +12,7 @@ async def write_to_file(filename: str, text: str) -> None:
 async def create_css_file(css_file_path: str) -> None:
     css_text = """
     body {
-      font-family: Arial, 'メイリオ', Meiryo, sans-serif;  /* システムにインストールされているフォントを使用 */
+      font-family: 'メイリオ', Meiryo, Arial, sans-serif;  /* 日本語サポートのフォントを優先 */
     }
     """
     if not os.path.exists(css_file_path):
