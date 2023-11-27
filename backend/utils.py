@@ -17,14 +17,6 @@ async def write_to_file(filename: str, text: str) -> None:
         await file.write(text_utf8)
 
 async def write_md_to_pdf(text: str) -> str:
-    """Converts Markdown text to a PDF file and returns the file path.
-
-    Args:
-        text (str): Markdown text to convert.
-
-    Returns:
-        str: The encoded file path of the generated PDF.
-    """
     task = uuid.uuid4().hex
     file_path = f"outputs/{task}"
     await write_to_file(f"{file_path}.md", text)
@@ -33,7 +25,7 @@ async def write_md_to_pdf(text: str) -> str:
         md2pdf(f"{file_path}.pdf",
                md_content=None,
                md_file_path=f"{file_path}.md",
-               css_file_path=None,
+               css_file_path="your_css_file.css",  # ここにCSSファイルのパスを指定
                base_url=None)
         print(f"Report written to {file_path}.pdf")
     except Exception as e:
